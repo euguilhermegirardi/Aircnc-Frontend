@@ -8,11 +8,13 @@ export default function Dashboard() {
   // useState([]) = array cos' I'm expecting a list of stops and not just one.
   const [spots, setSpots] = useState([]);
 
+  // useEffect to load all the information that is already saved in the Dashboard.
   // useEffect is a function which has two params, the first one is a function, the second one is an 'array of dependencies'.
   // The 'array of dependencies' has several variables and when these variables are uptaded the first function will be fired.
   // When we have an empty array, the first function will be fired just one time in this component.
   useEffect(() => {
     async function loadSpots() {
+      // Return the user's id to return all the spots saved.
       const user_id = localStorage.getItem('user');
       const response = await api.get('/dashboard', {
         headers: { user_id }

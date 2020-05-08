@@ -7,8 +7,9 @@ export default function New({ history }) {
   const [company, setCompany] = useState('');
   const [techs, setTechs] = useState('');
   const [price, setPrice] = useState('');
-  const [thumbnail, setThumbnail] = useState(null);
+  const [thumbnail, setThumbnail] = useState(null); // null cos' it's not a text.
 
+  // To create a preview from 'thumbnail'. Show the img selected.
   const preview = useMemo(() => {
     return thumbnail ? URL.createObjectURL(thumbnail) : null;
   }, [thumbnail]);
@@ -17,6 +18,8 @@ export default function New({ history }) {
     e.preventDefault();
 
     const user_id = localStorage.getItem('user');
+    // 'new FormData()' was created because to create a spot was use many informations as 'Multipart Form' as the Insomnia shows...
+    // So, to return those informations on React it's necessary to append them one by one.
     const data = new FormData();
     data.append('company', company);
     data.append('techs', techs);
@@ -28,6 +31,7 @@ export default function New({ history }) {
       headers: { user_id }
     });
 
+    // After create the new spot, send the user to '/dashboard'.
     history.push('/dashboard');
   };
 
@@ -35,12 +39,14 @@ export default function New({ history }) {
     <form onSubmit={handleSubmit}>
       <label
         id="thumbnail"
+        // 'preview' from the 'useMemo'.
         style={{ backgroundImage: `url(${preview})` }}
         className={thumbnail ? 'has-thumbnail' : null}
       >
         <input type="file" onChange={event => setThumbnail(event.target.files[0])}/>
         <img src={camera} alt="Select img"/>
       </label>
+
       <label htmlFor="company">Company *</label>
       <input
         id="company"
