@@ -46,11 +46,11 @@ The frontend was developed with [**_ReactJS_**](https://reactjs.org/) using [**_
 
 3. Install NPM packages
 
-   npm install
+       npm install
 
 4. Run the application
 
-   npm run start
+       npm run start
 
 ## Contributing
 
