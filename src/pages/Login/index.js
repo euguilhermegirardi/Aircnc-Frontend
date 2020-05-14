@@ -11,18 +11,15 @@ export default function Login({ history }) {
 
     // get the info after a few seconds or less and save the information in the 'const response'.
     const response = await api.post('/sessions', { email });
-    const { _id } = response.data; // id which comes from the server's response, same id from Insomnia.
-    localStorage.setItem('user', _id); // Save the id in the applications' database.
+    // id which comes from the server's response, same id from Insomnia.
+    const { _id } = response.data;
+    // Save the id in the applications' database.
+    localStorage.setItem('user', _id);
 
-    // 'history' is used to navegate the user between the pages.
+    // 'history' is used to navigate the user between the pages.
     // After get the '_id' from the response, send the user to '/dashboard'.
     history.push('/dashboard');
   };
-
-  //onChange={handleEmailChange}
-  //function handleEmailChange(event) {
-    //setEmail(event.target.value)
-  //};
 
   return (
     <>

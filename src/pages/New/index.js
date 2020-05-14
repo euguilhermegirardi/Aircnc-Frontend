@@ -18,8 +18,8 @@ export default function New({ history }) {
     e.preventDefault();
 
     const user_id = localStorage.getItem('user');
-    // 'new FormData()' was created because to create a spot was use many informations as 'Multipart Form' as the Insomnia shows...
-    // So, to return those informations on React it's necessary to append them one by one.
+    // 'new FormData()' was created because to create a spot was use many information as 'Multipart Form' as the Insomnia shows...
+    // So, to return those information on React it's necessary to append them one by one.
     const data = new FormData();
     data.append('company', company);
     data.append('techs', techs);
