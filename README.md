@@ -12,8 +12,8 @@ This is a project where I could learn many professional techniques that is used 
 
 ## The frontend
 
-The frontend was developed with [**_ReactJS_**](https://reactjs.org/) using [**Axios**](https://www.npmjs.com/package/axios) for the http requests.
-[**react-router-dom**](https://www.npmjs.com/package/react-router-dom) was used to handle the routes in this application and [**socket.io**](https://socket.io/) to connect the requests from the mobile to the web in real-time.
+The frontend was developed with [**_ReactJS_**](https://reactjs.org/) using [**_axios_**](https://www.npmjs.com/package/axios) for the http requests.
+[**_react-router-dom_**](https://www.npmjs.com/package/react-router-dom) was used to handle the routes in this application and [**_socket.io_**](https://socket.io/) to connect the requests from the mobile to the web in real-time.
 
 **Login**
 ![login](img/part1.png)
